@@ -8,7 +8,7 @@ const AppBar = ({
   withoutSearchBarProps = {},
 }) => {
   return (
-    <div className="bg-surface-200 p-2 flex items-center justify-between gap-4">
+    <div className="bg-secondary-100 border-b border-b-secondary-200 p-2 flex items-center justify-between gap-4">
       <IconButton variant="outline">
         <Menu />
       </IconButton>
@@ -43,7 +43,7 @@ export const WithourSearchBar = ({
 }) => {
   return (
     <div className="flex items-center gap-4 flex-1">
-      <div className="flex flex-col gap-0.5 flex-1 text-surface-900">
+      <div className="flex flex-col flex-1 text-secondary-900">
         <h2 className="font-semibold">{title}</h2>
         <h2 className="text-sm font-medium">{subTitle}</h2>
       </div>

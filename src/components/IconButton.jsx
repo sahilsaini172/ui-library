@@ -21,13 +21,13 @@ const shapeMap = {
 
 const variantMap = {
   filled:
-    "bg-primary-500 text-primary-100 shadow-[4px_4px_8px] shadow-primary-700/25 inset-shadow-[2px_2px_3px] inset-shadow-[#d3cbf1]/25 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-primary-900",
+    "bg-primary-500 text-primary-100 shadow-[4px_4px_4px] shadow-black/25 inset-shadow-[2px_2px_3px] inset-shadow-white/25 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-black",
   tonal:
-    "bg-primary-100 text-primary-700 shadow-[4px_4px_8px] shadow-primary-700/25 inset-shadow-[2px_2px_3px] inset-shadow-white/75 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-primary-700",
+    "bg-primary-100 text-primary-700 shadow-[4px_4px_4px] shadow-black/25 inset-shadow-[2px_2px_3px] inset-shadow-white/50 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-primary-700",
   outline:
-    "bg-surface-200 text-surface-700 active:inset-shadow-[1px_1px_4px] active:inset-shadow-surface-700",
+    "bg-surface-100 text-surface-700 active:inset-shadow-[1px_1px_4px] active:inset-shadow-black",
   standard:
-    "bg-surface-100 text-surface-700 shadow-[4px_4px_8px] shadow-surface-700 inset-shadow-[2px_2px_3px] inset-shadow-white active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-surface-700",
+    "bg-surface-100 text-surface-700 shadow-[4px_4px_4px] shadow-black/25 inset-shadow-[2px_2px_3px] inset-shadow-white/50 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-black",
 };
 
 const outerShapeMap = {
