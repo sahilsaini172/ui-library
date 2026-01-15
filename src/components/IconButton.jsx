@@ -1,17 +1,12 @@
 import { Plus } from "lucide-react";
+import Badge from "./Badge";
 
 const sizeMap = {
-  xs: "p-1",
-  sm: "p-1.5",
-  md: "p-2",
-  lg: "p-3",
-  xl: "p-4",
-};
-
-const widthMap = {
-  narrow: "w-8",
-  default: "w-10",
-  wide: "w-14",
+  xs: "size-8 *:size-5",
+  sm: "size-10",
+  md: "size-14",
+  lg: "size-24 *:size-8",
+  xl: "size-34 *:size-10",
 };
 
 const shapeMap = {
@@ -20,14 +15,14 @@ const shapeMap = {
 };
 
 const variantMap = {
-  filled:
-    "bg-primary-500 text-primary-100 shadow-[4px_4px_4px] shadow-black/25 inset-shadow-[2px_2px_3px] inset-shadow-white/25 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-black",
-  tonal:
-    "bg-primary-100 text-primary-700 shadow-[4px_4px_4px] shadow-black/25 inset-shadow-[2px_2px_3px] inset-shadow-white/50 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-primary-700",
-  outline:
-    "bg-surface-100 text-surface-700 active:inset-shadow-[1px_1px_4px] active:inset-shadow-black",
+  primary:
+    "bg-linear-to-b from-primary-400 to-primary-500 text-primary-100 shadow-[4px_4px_2px] shadow-black/15 inset-shadow-[0px_2px_2px] inset-shadow-white/20 hover:font-medium active:shadow-none active:inset-shadow-[1px_1px_4px] active:scale-95 active:inset-shadow-black",
+  secondary:
+    "bg-linear-to-b from-secondary-200 to-secondary-400 text-secondary-700 shadow-[4px_4px_2px] shadow-black/15 inset-shadow-[0px_2px_2px] inset-shadow-white/25 hover:text-secondary-900 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-black active:scale-95",
+  tertiary:
+    "bg-linear-to-t from-surface-100 to-surface-200 text-surface-700 inset-shadow-[0px_2px_2px] inset-shadow-white/25 hover:text-surface-900 active:inset-shadow-[1px_1px_4px] active:inset-shadow-black active:scale-95",
   standard:
-    "bg-surface-100 text-surface-700 shadow-[4px_4px_4px] shadow-black/25 inset-shadow-[2px_2px_3px] inset-shadow-white/50 active:shadow-none active:inset-shadow-[1px_1px_4px] active:inset-shadow-black",
+    "bg-surface-100 text-surface-700 hover:text-surface-900 active:inset-shadow-[1px_1px_4px] active:inset-shadow-black/50 active:scale-95",
 };
 
 const outerShapeMap = {
@@ -35,26 +30,37 @@ const outerShapeMap = {
   pill: "rounded-full",
 };
 
+const outerVariantMap = {
+  primary: "bg-surface-950",
+  secondary: "bg-surface-950",
+  standard: "bg-surface-950/10",
+};
+
 const IconButton = ({
   size = "md",
-  shape = "square",
-  width = "default",
-  variant = "standard",
+  shape = "pill",
+  variant = "primary",
+  badge = false,
   children,
   className,
 }) => {
   return (
     <div
       className={[
-        "p-px bg-surface-900 flex items-center justify-center w-fit",
+        "p-px relative bg-surface-950 flex items-center justify-center w-fit",
         outerShapeMap[shape],
+        outerVariantMap[variant],
       ].join(" ")}
     >
+      {badge && (
+        <div className="absolute top-1 right-1">
+          <Badge />
+        </div>
+      )}
       <button
         className={[
-          `flex items-center justify-center ease-in duration-150 focus:outline-0 cursor-pointer *:p-1 text-center ${className}`,
+          `flex items-center justify-center ease-in duration-100 focus:outline-0 cursor-pointer text-center ${className}`,
           sizeMap[size],
-          widthMap[width],
           shapeMap[shape],
           variantMap[variant],
         ].join(" ")}

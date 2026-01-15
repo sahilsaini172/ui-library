@@ -8,8 +8,8 @@ const AppBar = ({
   withoutSearchBarProps = {},
 }) => {
   return (
-    <div className="bg-secondary-100 border-b border-b-secondary-200 p-2 flex items-center justify-between gap-4">
-      <IconButton variant="outline">
+    <div className="bg-surface-100 border-b border-b-surface-200 p-2 flex items-center justify-between gap-4">
+      <IconButton variant="secondary">
         <Menu />
       </IconButton>
 
@@ -24,9 +24,9 @@ const AppBar = ({
 
 export const WithSearchBar = ({ trailingLabel = "S" }) => {
   return (
-    <div className="flex items-center gap-4 flex-1">
-      <SearchBar />
-      <IconButton shape="pill" variant="filled">
+    <div className="flex items-center gap-4 w-full">
+      <SearchBar/>
+      <IconButton shape="pill" variant="primary">
         {trailingLabel}
       </IconButton>
     </div>
